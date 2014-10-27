@@ -1,0 +1,25 @@
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.CtbQrtRptControl.resources
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\ArCtbQuarterlyRpt.csproj.GenerateResource.Cache
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.dll
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.pdb
+C:\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.dll.config
+C:\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.dll
+C:\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.pdb
+C:\Users\Administrator\Desktop\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.CtbQrtRptControl.resources
+C:\Users\Administrator\Desktop\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\ArCtbQuarterlyRpt.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.dll.licenses
+C:\Users\Administrator\Desktop\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.dll
+C:\Users\Administrator\Desktop\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.pdb
+C:\Users\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.dll.config
+C:\Users\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.dll
+C:\Users\TRAVERSE - AAWS\CSI.AAWS.ArCtbQuarterlyRpt.pdb
+C:\Users\Administrator\Desktop\AACTB\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AACTB\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.CtbQrtRptControl.resources
+C:\Users\Administrator\Desktop\AACTB\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\ArCtbQuarterlyRpt.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\AACTB\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.dll.licenses
+C:\Users\Administrator\Desktop\AACTB\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.dll
+C:\Users\Administrator\Desktop\AACTB\ArCtbQuarterlyRpt\ArCtbQuarterlyRpt\obj\Debug\CSI.AAWS.ArCtbQuarterlyRpt.pdb

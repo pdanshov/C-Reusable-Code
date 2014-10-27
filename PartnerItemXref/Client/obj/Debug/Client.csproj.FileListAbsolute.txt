@@ -1,0 +1,47 @@
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\CSI.EDI_11.Client.PartnerItemXref.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\CSI.EDI_11.Client.PartnerItemXref.pdb
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.Charts.v8.1.Core.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.Data.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.Utils.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraEditors.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraGrid.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\TRAVERSE.Business.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\TRAVERSE.Client.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\TRAVERSE.Controls.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\TRAVERSE.Core.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraPivotGrid.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraLayout.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraBars.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraPrinting.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\IronMath.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraCharts.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\IronPython.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraNavBar.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraRichTextEdit.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraReports.v8.1.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraPivotGrid.v8.1.Core.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\DevExpress.XtraCharts.v8.1.UI.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\bin\Debug\TRAVERSE.Business.XmlSerializers.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\obj\Debug\TRAVERSE.Client.PartnerItemXref.PartnerItemXrefControl.resources
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\obj\Debug\CSI.EDI_11.Client.PartnerItemXref.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Client\obj\Debug\CSI.EDI_11.Client.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\obj\Debug\CSI.EDI.Client.PartnerItemXref.PartnerItemXrefControl.resources
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\bin\Debug\CSI.EDI.Client.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\bin\Debug\CSI.EDI.Client.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\obj\Debug\CSI.EDI.Client.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Client\obj\Debug\CSI.EDI.Client.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - EDI 2\CSI.EDI.Client.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - EDI 2\CSI.EDI.Client.PartnerItemXref.pdb
+C:\Users\Administrator\Desktop\PartnerItemXref\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\PartnerItemXref\Client\obj\Debug\CSI.EDI.Client.PartnerItemXref.PartnerItemXrefControl.resources
+C:\Users\Administrator\Desktop\PartnerItemXref\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\PartnerItemXref\Client\obj\Debug\CSI.EDI.Client.PartnerItemXref.dll
+C:\Users\Administrator\Desktop\PartnerItemXref\Client\obj\Debug\CSI.EDI.Client.PartnerItemXref.pdb

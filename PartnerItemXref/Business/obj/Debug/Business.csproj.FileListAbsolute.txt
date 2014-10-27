@@ -1,0 +1,18 @@
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\bin\Debug\TRAVERSE.Business.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\bin\Debug\TRAVERSE.Core.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\bin\Debug\TRAVERSE.Business.XmlSerializers.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\obj\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Examples\PartnerItemXref\Data\PartnerItemXref\Business\obj\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Business\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Business\bin\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Business\obj\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\ClientSource\Mainetti\PartnerItemXref\Business\obj\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - EDI 2\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - EDI 2\CSI.EDI_11.Business.PartnerItemXref.pdb
+C:\Users\Administrator\Desktop\PartnerItemXref\Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\PartnerItemXref\Business\obj\Debug\CSI.EDI_11.Business.PartnerItemXref.dll
+C:\Users\Administrator\Desktop\PartnerItemXref\Business\obj\Debug\CSI.EDI_11.Business.PartnerItemXref.pdb

@@ -1,0 +1,187 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F0FD4EE-5DD5-4F68-BC44-70D26ABF8F92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSI.MT.CustomRPBlanketOrder</RootNamespace>
+    <AssemblyName>CSI.MT.CustomRPBlanketOrder</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v8.1.Core, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.Charts.v8.1.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.Data.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.Utils.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraBars.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraCharts.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v8.1.UI, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraCharts.v8.1.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraEditors.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraGrid.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraLayout.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraPrinting.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\DevExpress.XtraReports.v8.1.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TRAVERSE.Business, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Business.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Business.AccountsPayable, Version=1.1.10203.852, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Business.AccountsPayable.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Business.APTransaction, Version=1.1.10203.1438, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Business.APTransaction.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Business.Batch, Version=1.1.10203.1438, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Business.Batch.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Business.Sys, Version=1.1.10203.1330, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Business.Transaction, Version=1.1.10203.1438, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Business.Transaction.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Business.TransLink, Version=1.1.10203.1153, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Business.TransLink.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Client, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Client.Report, Version=1.0.3184.27158, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Client.Report.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Client.ReportViewer, Version=1.1.10203.1379, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Client.ReportViewer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Client.Transaction, Version=1.1.10203.1438, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Client.Transaction.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Controls, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Core, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Report.APTransaction, Version=1.1.10203.1438, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - Mainetti\TRAVERSE.Report.APTransaction.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Report.BlanketOrder, Version=1.1.10203.1438, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomBlanketOrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomRPBlanketOrderData.cs" />
+    <Compile Include="CustomRPBlanketOrderPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomBlanketOrderControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomBlanketOrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

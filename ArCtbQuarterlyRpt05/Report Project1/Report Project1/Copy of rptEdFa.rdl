@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="EDI 11">
+      <rd:DataSourceID>3b43614c-d6f1-4a6b-b958-250860bb3011</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=CSI12\EDI;Initial Catalog=EDI</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="FAISAControlNum">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>FAISAControlNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="partnerId">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>partnerId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocDesc">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>DocDesc</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocKey">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>DocKey</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SendDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>SendDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CommStatus">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>CommStatus</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PartnerName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>PartnerName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FAReturnCode">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>FAReturnCode</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Caption">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>Caption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SendTime">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>SendTime</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ISAControlNum">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>ISAControlNum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="faDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>faDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="faTime">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>faTime</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocId">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DocId</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="Label128">
+        <Top>0.625in</Top>
+        <Width>0.5916in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>23</ZIndex>
+        <Left>2.7916in</Left>
+        <Height>0.1666in</Height>
+        <Value>Comm</Value>
+      </Textbox>
+      <Textbox Name="Label127">
+        <Top>0.625in</Top>
+        <Width>0.5104in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>22</ZIndex>
+        <Left>6.927in</Left>
+        <Height>0.1666in</Height>
+        <Value>FA Return</Value>
+      </Textbox>
+      <Textbox Name="Label126">
+        <Top>0.625in</Top>
+        <Width>0.3312in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>21</ZIndex>
+        <Left>6.2812in</Left>
+        <Height>0.1666in</Height>
+        <Value>FA</Value>
+      </Textbox>
+      <Textbox Name="Label125">
+        <Top>0.625in</Top>
+        <Width>0.3312in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>20</ZIndex>
+        <Left>5.6145in</Left>
+        <Height>0.1666in</Height>
+        <Value>FA</Value>
+      </Textbox>
+      <Textbox Name="Label122">
+        <Top>0.7916in</Top>
+        <Width>0.6562in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>19</ZIndex>
+        <Left>4.2083in</Left>
+        <Height>0.1666in</Height>
+        <Value>Send Time</Value>
+      </Textbox>
+      <Textbox Name="Label121">
+        <Top>0.7916in</Top>
+        <Width>0.625in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>18</ZIndex>
+        <Left>3.5416in</Left>
+        <Height>0.1666in</Height>
+        <Value>Send Date</Value>
+      </Textbox>
+      <Textbox Name="Label119">
+        <Top>0.7916in</Top>
+        <Width>0.5916in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>17</ZIndex>
+        <Left>2.7916in</Left>
+        <Height>0.1666in</Height>
+        <Value>Status</Value>
+      </Textbox>
+      <Textbox Name="Label118">
+        <Top>0.7916in</Top>
+        <Width>0.727in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>16</ZIndex>
+        <Left>4.875in</Left>
+        <Height>0.1666in</Height>
+        <Value>Control No</Value>
+      </Textbox>
+      <Textbox Name="lblISAControlNum">
+        <Top>0.7916in</Top>
+        <Width>0.9833in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>15</ZIndex>
+        <Height>0.1666in</Height>
+        <Value>ISA Control No</Value>
+      </Textbox>
+      <Textbox Name="lblFAReturnCode">
+        <Top>0.7916in</Top>
+        <Width>0.5104in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <Left>6.927in</Left>
+        <Height>0.1666in</Height>
+        <Value>Code</Value>
+      </Textbox>
+      <Textbox Name="lblSendTime">
+        <Top>0.7916in</Top>
+        <Width>0.625in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>13</ZIndex>
+        <Left>6.2916in</Left>
+        <Height>0.1666in</Height>
+        <Value>Send Time</Value>
+      </Textbox>
+      <Textbox Name="lblFAISAControlNum">
+        <Top>0.625in</Top>
+        <Width>0.727in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>12</ZIndex>
+        <Left>4.875in</Left>
+        <Height>0.1666in</Height>
+        <Value>FA ISA</Value>
+      </Textbox>
+      <Textbox Name="lblSendDate">
+        <Top>0.7916in</Top>
+        <Width>0.625in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>11</ZIndex>
+        <Left>5.6145in</Left>
+        <Height>0.1666in</Height>
+        <Value>Send Date</Value>
+      </Textbox>
+      <Textbox Name="lblDocKey">
+        <Top>0.7916in</Top>
+        <Width>0.9354in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <Left>1.6875in</Left>
+        <Height>0.1666in</Height>
+        <Value>Key</Value>
+      </Textbox>
+      <Textbox Name="lblDocDesc">
+        <Top>0.7916in</Top>
+        <Width>3.2812in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <Left>1.0104in</Left>
+        <Height>0.1666in</Height>
+        <Value>Document</Value>
+      </Textbox>
+      <Textbox Name="lblPartnerName">
+        <Top>0.625in</Top>
+        <Width>0.7958in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <Height>0.1666in</Height>
+        <Value>PartnerName</Value>
+      </Textbox>
+      <Textbox Name="lblPage">
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Top>0.0625in</Top>
+        <Width>0.3229in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BackgroundColor>#ff00ff</BackgroundColor>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <Left>1.0833in</Left>
+        <Height>0.1666in</Height>
+        <Value>Page</Value>
+      </Textbox>
+      <Line Name="Line57">
+        <Top>0.5in</Top>
+        <Width>7.4583in</Width>
+        <Style>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Line Name="Line41">
+        <Top>0.0208in</Top>
+        <Width>7.4583in</Width>
+        <Style>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="LblCompanyName">
+        <Top>0.0625in</Top>
+        <Width>5.4937in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>15pt</LineHeight>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Left>1.0041in</Left>
+        <Height>0.1895in</Height>
+        <Value />
+      </Textbox>
+      <Textbox Name="lbReportName">
+        <Top>0.2583in</Top>
+        <Width>5.4937in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>15pt</LineHeight>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Left>1.0041in</Left>
+        <Height>0.1895in</Height>
+        <Value>FA Report</Value>
+      </Textbox>
+      <Textbox Name="txtPage">
+        <Top>0.0625in</Top>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>6.5729in</Left>
+        <Height>0.2in</Height>
+        <Value>=ReportItems!lblPage.Value.Parameters!Caption.Value &amp; " " &amp; Globals.PageNumber &amp; " / " &amp; Globals.TotalPages</Value>
+      </Textbox>
+      <Textbox Name="txtTime">
+        <Top>0.2604in</Top>
+        <Width>1in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <Format>H:mm tt</Format>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Height>0.2in</Height>
+        <Value>=Now()</Value>
+      </Textbox>
+      <Textbox Name="txtDate">
+        <Top>0.0625in</Top>
+        <Width>1in</Width>
+        <Style>
+          <Color>#000000</Color>
+          <BorderColor>
+            <Default>#000000</Default>
+          </BorderColor>
+          <FontSize>8pt</FontSize>
+          <Format>d</Format>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>0in</PaddingLeft>
+          <PaddingRight>0in</PaddingRight>
+          <PaddingTop>0in</PaddingTop>
+          <PaddingBottom>0in</PaddingBottom>
+          <LineHeight>13pt</LineHeight>
+        </Style>
+        <Height>0.2in</Height>
+        <Value>=Now()</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <Style>
+      <BackgroundColor>#ffffff</BackgroundColor>
+    </Style>
+  </PageHeader>
+  <rd:ReportID>4bf5758c-b560-4fb6-9f73-1f98dcd6f063</rd:ReportID>
+  <DataSets>
+    <DataSet Name="ED_FA_Report">
+      <Fields>
+        <Field Name="ImportId">
+          <DataField>ImportId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ImportBatchId">
+          <DataField>ImportBatchId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocId">
+          <DataField>DocId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocKey">
+          <DataField>DocKey</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SenderID">
+          <DataField>SenderID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ReceiverID">
+          <DataField>ReceiverID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ISAControlNum">
+          <DataField>ISAControlNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GSControlNum">
+          <DataField>GSControlNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="STControlNum">
+          <DataField>STControlNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GSVersion">
+          <DataField>GSVersion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StatusFlag">
+          <DataField>StatusFlag</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SendDate">
+          <DataField>SendDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SendTime">
+          <DataField>SendTime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsNew">
+          <DataField>IsNew</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="DeletedYn">
+          <DataField>DeletedYn</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="DeleteUserId">
+          <DataField>DeleteUserId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeleteWrkStnId">
+          <DataField>DeleteWrkStnId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeleteDate">
+          <DataField>DeleteDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FAISAControlNum">
+          <DataField>FAISAControlNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FAGSControlNum">
+          <DataField>FAGSControlNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FASTControlNum">
+          <DataField>FASTControlNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FAReturnCode">
+          <DataField>FAReturnCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FADate">
+          <DataField>FADate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FATime">
+          <DataField>FATime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartnerId">
+          <DataField>PartnerId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocKeySearch">
+          <DataField>DocKeySearch</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocType">
+          <DataField>DocType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartnerID_1">
+          <DataField>PartnerID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartnerName">
+          <DataField>PartnerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustID">
+          <DataField>CustID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContactName">
+          <DataField>ContactName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContactPhone">
+          <DataField>ContactPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContactFax">
+          <DataField>ContactFax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContactEmail">
+          <DataField>ContactEmail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ContactWebSite">
+          <DataField>ContactWebSite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EdiVendorID">
+          <DataField>EdiVendorID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OptReqDunsYN">
+          <DataField>OptReqDunsYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptReqDeptYN">
+          <DataField>OptReqDeptYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptReqMerchandiseTypeCodeYN">
+          <DataField>OptReqMerchandiseTypeCodeYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptConsolInvcYN">
+          <DataField>OptConsolInvcYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptConsolAsnYN">
+          <DataField>OptConsolAsnYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptInvcStoreDirectYN">
+          <DataField>OptInvcStoreDirectYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptAsnStoreDirectYN">
+          <DataField>OptAsnStoreDirectYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptUCCGenMethod">
+          <DataField>OptUCCGenMethod</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DfltShipToType">
+          <DataField>DfltShipToType</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="DfltAsnLblTmpl">
+          <DataField>DfltAsnLblTmpl</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DfltShipperID">
+          <DataField>DfltShipperID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DfltItemUirType">
+          <DataField>DfltItemUirType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DUNS">
+          <DataField>DUNS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StartDate">
+          <DataField>StartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ActiveYn">
+          <DataField>ActiveYn</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ISAControlNum_1">
+          <DataField>ISAControlNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="GSControlNum_1">
+          <DataField>GSControlNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="STControlNum_1">
+          <DataField>STControlNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ts">
+          <DataField>ts</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="OptAllowPoChangesYN">
+          <DataField>OptAllowPoChangesYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="optUseInvPrice">
+          <DataField>optUseInvPrice</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptSumAsnYN">
+          <DataField>OptSumAsnYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="optUseUomXrefYN">
+          <DataField>optUseUomXrefYN</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="OptAsnRequireAllSoLines">
+          <DataField>OptAsnRequireAllSoLines</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="AltCustId">
+          <DataField>AltCustId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocID_1">
+          <DataField>DocID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocDesc">
+          <DataField>DocDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DocType_1">
+          <DataField>DocType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FaYn">
+          <DataField>FaYn</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="RunCommand">
+          <DataField>RunCommand</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InboundOutbound">
+          <DataField>InboundOutbound</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>EDI 11</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.rpt_EdFa</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>7.4687in</Width>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="ReportFooter">
+        <ZIndex>1</ZIndex>
+        <ReportItems>
+          <Textbox Name="lblEndOfReport">
+            <Width>1.1875in</Width>
+            <Style>
+              <Color>#000000</Color>
+              <BorderColor>
+                <Default>#000000</Default>
+              </BorderColor>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <PaddingLeft>0in</PaddingLeft>
+              <PaddingRight>0in</PaddingRight>
+              <PaddingTop>0in</PaddingTop>
+              <PaddingBottom>0in</PaddingBottom>
+              <LineHeight>13pt</LineHeight>
+            </Style>
+            <Height>0.1666in</Height>
+            <Value> *** End of Report ***</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>0.3853in</Top>
+        <Style>
+          <BackgroundColor>#ffffff</BackgroundColor>
+        </Style>
+      </Rectangle>
+      <List Name="GroupLevel0">
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Parameters!partnerId.Value</SortExpression>
+            <Direction>Ascending</Direction>
+          </SortBy>
+        </Sorting>
+        <ReportItems>
+          <Rectangle Name="GroupHeader0">
+            <ZIndex>1</ZIndex>
+            <ReportItems>
+              <Textbox Name="PartnerName">
+                <Width>3.2812in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <Left>0.0104in</Left>
+                <Value>=Parameters!PartnerName.Value</Value>
+              </Textbox>
+            </ReportItems>
+            <Style>
+              <BackgroundColor>#ffffff</BackgroundColor>
+            </Style>
+            <Height>0.177in</Height>
+          </Rectangle>
+          <Rectangle Name="Detail">
+            <ReportItems>
+              <Textbox Name="SendTime">
+                <Width>0.6354in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <Format>d</Format>
+                  <TextAlign>Center</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>9</ZIndex>
+                <Left>4.2083in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!SendTime.Value</Value>
+              </Textbox>
+              <Textbox Name="SendDate">
+                <Width>0.6354in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <Format>d</Format>
+                  <TextAlign>Center</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>8</ZIndex>
+                <Left>3.5833in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!SendDate.Value</Value>
+              </Textbox>
+              <Textbox Name="CommStatus">
+                <Width>0.7895in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <TextAlign>Left</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>7</ZIndex>
+                <Left>2.7916in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!CommStatus.Value</Value>
+              </Textbox>
+              <Textbox Name="faSendTime">
+                <Width>0.5104in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <Format>d</Format>
+                  <TextAlign>Center</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>6</ZIndex>
+                <Left>6.2812in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!faTime.Value</Value>
+              </Textbox>
+              <Textbox Name="faSendDate">
+                <Width>0.677in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <Format>d</Format>
+                  <TextAlign>Center</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>5</ZIndex>
+                <Left>5.6145in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!faDate.Value</Value>
+              </Textbox>
+              <Textbox Name="ISAControlNum">
+                <Width>0.9583in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>4</ZIndex>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!ISAControlNum.Value</Value>
+              </Textbox>
+              <Textbox Name="FAReturnCode">
+                <CanShrink>true</CanShrink>
+                <Width>0.5104in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>3</ZIndex>
+                <CanGrow>true</CanGrow>
+                <Left>6.927in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!FAReturnCode.Value</Value>
+              </Textbox>
+              <Textbox Name="DocKey">
+                <Width>1.102in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <TextAlign>Left</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>2</ZIndex>
+                <Left>1.6875in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!DocKey.Value</Value>
+              </Textbox>
+              <Textbox Name="FAISAControlNum">
+                <Width>0.7291in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <TextAlign>Left</TextAlign>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <ZIndex>1</ZIndex>
+                <Left>4.875in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!FAISAControlNum.Value</Value>
+              </Textbox>
+              <Textbox Name="DocDesc">
+                <Width>0.6562in</Width>
+                <Style>
+                  <Color>#000000</Color>
+                  <BorderColor>
+                    <Default>#000000</Default>
+                  </BorderColor>
+                  <FontSize>8pt</FontSize>
+                  <PaddingLeft>0in</PaddingLeft>
+                  <PaddingRight>0in</PaddingRight>
+                  <PaddingTop>0in</PaddingTop>
+                  <PaddingBottom>0in</PaddingBottom>
+                  <LineHeight>13pt</LineHeight>
+                </Style>
+                <Left>1.0104in</Left>
+                <Height>0.1659in</Height>
+                <Value>=Parameters!DocDesc.Value</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.177in</Top>
+            <Style>
+              <BackgroundColor>#ffffff</BackgroundColor>
+            </Style>
+          </Rectangle>
+        </ReportItems>
+        <Grouping Name="GroupLevel0_Grouping">
+          <GroupExpressions>
+            <GroupExpression>=Parameters!partnerId.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+        <Height>0.3853in</Height>
+      </List>
+    </ReportItems>
+    <Height>0.6353in</Height>
+  </Body>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Height>0in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <Style>
+      <BackgroundColor>#ffffff</BackgroundColor>
+    </Style>
+  </PageFooter>
+</Report>

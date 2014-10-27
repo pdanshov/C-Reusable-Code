@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="CPU">
+      <rd:DataSourceID>39c761ae-177d-4326-a48c-5df6f0ecfde2</rd:DataSourceID>
+      <DataSourceReference>CPU</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="ReportName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ArCustomerActivity</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="ReportFilter">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportFilter</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="SummaryHistoryPeriod">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SummaryHistoryPeriod</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="FiscalYear">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2008</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>FiscalYear</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="SortBy">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SortBy</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="BandedRows">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>True</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Banded Rows</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.05in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5in</RightMargin>
+  <LeftMargin>0.5in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="txtReportTitle3Lbl">
+        <Top>0.66667in</Top>
+        <Width>4.75in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Left>1.25in</Left>
+        <Height>0.2in</Height>
+        <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblSortedBy") &amp; " " &amp; 
+SWITCH
+(
+(Parameters!SortBy.Value = 0), code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblCustomerId"), 
+(Parameters!SortBy.Value = 1), code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblClassCode"), 
+(Parameters!SortBy.Value = 2), code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblSalesRepId")
+)</Value>
+      </Textbox>
+      <Textbox Name="txtReportTitle2">
+        <Top>0.46667in</Top>
+        <Width>4.75in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Left>1.25in</Left>
+        <Height>0.2in</Height>
+        <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblFor") &amp; " " &amp; code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblFiscalPeriod") &amp; " " &amp; Parameters!SummaryHistoryPeriod.Value &amp; " / " &amp; Parameters!FiscalYear.Value</Value>
+      </Textbox>
+      <Textbox Name="lblReportTitle">
+        <Top>0.26667in</Top>
+        <Width>4.75in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Left>1.25in</Left>
+        <Height>0.2in</Height>
+        <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblReportTitle")</Value>
+      </Textbox>
+      <Textbox Name="txtCompanyName">
+        <Top>0.06667in</Top>
+        <Width>4.75in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Left>1.25in</Left>
+        <Height>0.2in</Height>
+        <Value>=code.utility.GetStringRule("SM", "CompanyName")</Value>
+      </Textbox>
+      <Textbox Name="txtPageNumber">
+        <Top>0.06667in</Top>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <TextAlign>Right</TextAlign>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Left>6.25in</Left>
+        <Height>0.58333in</Height>
+        <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblPage") &amp; " " &amp; Globals!PageNumber</Value>
+      </Textbox>
+      <Line Name="lin1">
+        <Top>0.01459in</Top>
+        <Width>7.25in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+          <BorderWidth>
+            <Default>2pt</Default>
+          </BorderWidth>
+        </Style>
+        <Height>0in</Height>
+      </Line>
+    </ReportItems>
+    <Height>2.05in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5in</BottomMargin>
+  <rd:ReportID>c3349ce6-71ed-4fd2-87b7-8890dc802e4b</rd:ReportID>
+  <CodeModules>
+    <CodeModule>TRAVERSE.Client.Report, Version=1.0.3184.27158, Culture=neutral, PublicKeyToken=null</CodeModule>
+  </CodeModules>
+  <DataSets>
+    <DataSet Name="MainDataset">
+      <Fields>
+        <Field Name="GrpId1">
+          <DataField>GrpId1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustId">
+          <DataField>CustId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustName">
+          <DataField>CustName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClassId">
+          <DataField>ClassId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalesRepId1">
+          <DataField>SalesRepId1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalSales">
+          <DataField>TotalSales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalNumInvc">
+          <DataField>TotalNumInvc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalAveInvc">
+          <DataField>TotalAveInvc</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalGrossProfit">
+          <DataField>TotalGrossProfit</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="GrandTotalSales">
+          <DataField>GrandTotalSales</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="GrandTotalGrossProfit">
+          <DataField>GrandTotalGrossProfit</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="GrandTotalNumInvc">
+          <DataField>GrandTotalNumInvc</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalSalesPct">
+          <DataField>TotalSalesPct</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalGrossPct">
+          <DataField>TotalGrossPct</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalAvePct">
+          <DataField>TotalAvePct</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="TotalNumInvcPct">
+          <DataField>TotalNumInvcPct</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CPU</DataSourceName>
+        <CommandText>SELECT CASE @SortBy
+		WHEN 0 THEN c.CustId
+		WHEN 1 THEN c.ClassId
+		WHEN 2 THEN c.SalesRepId1
+		END AS GrpId1
+	, c.CustId, c.CustName, c.ClassId, c.SalesRepId1
+	, h.TotSales AS TotalSales, h.NumInvc AS TotalNumInvc
+	, CASE WHEN h.NumInvc &lt;&gt; 0 THEN h.TotSales / h.NumInvc ELSE 0 END AS TotalAveInvc
+	, h.TotSales - h.TotCogs AS TotalGrossProfit, t.TotSales AS GrandTotalSales
+	, t.TotSales - t.TotCogs AS GrandTotalGrossProfit, t.NumInvc AS GrandTotalNumInvc
+	, CASE WHEN t.TotSales &lt;&gt; 0 THEN h.TotSales / t.TotSales * 100 ELSE 0 END AS TotalSalesPct
+	, CASE WHEN t.TotSales - t.TotCogs &lt;&gt; 0 THEN (h.TotSales - h.TotCogs)/(t.TotSales - t.TotCogs) * 100 
+		ELSE 0 END AS TotalGrossPct
+	, CASE WHEN t.TotSales &lt;&gt; 0 THEN (h.TotSales / t.TotSales * 100) ELSE 0 END TotalAvePct
+	, CAST(CASE WHEN t.NumInvc &lt;&gt; 0 THEN ROUND((CONVERT(decimal, h.NumInvc)/CONVERT(decimal, t.NumInvc)) * 100, 2) 
+		ELSE 0 END AS float) AS TotalNumInvcPct 
+FROM (
+	SELECT FiscalYear, SumHistPeriod
+		, CAST(SUM(SIGN(TransType) * (TaxSubtotal + NonTaxSubtotal)) AS float) TotSales
+		, CAST(SUM(SIGN(TransType) * TotCost) AS float) TotCogs
+		, CAST(SUM(CASE WHEN TransType &gt; 0 THEN 1 ELSE 0 END) AS int) NumInvc
+	FROM dbo.tblArHistHeader 
+	WHERE FiscalYear = @FiscalYear AND SumHistPeriod = @SummaryHistoryPeriod 
+	GROUP BY FiscalYear, SumHistPeriod
+	) t 
+	INNER JOIN (
+			SELECT CustId, FiscalYear, SumHistPeriod, CurrencyID
+				, CAST(SUM(SIGN(TransType) * (TaxSubtotal + NonTaxSubtotal)) AS float) TotSales
+				, CAST(SUM(SIGN(TransType) * TotCost) AS float) TotCogs
+				, CAST(SUM(SIGN(TransType) * (TaxSubtotalFgn + NonTaxSubtotalFgn)) AS float) TotSalesFgn
+				, CAST(SUM(SIGN(TransType) * TotCostFgn) AS float) TotCogsFgn
+				, CAST(SUM(CASE WHEN TransType &gt; 0 THEN 1 ELSE 0 END) AS int) NumInvc 
+			FROM dbo.tblArHistHeader 
+			GROUP BY CustId, FiscalYear, SumHistPeriod, CurrencyID) h 
+		ON (t.SumHistPeriod = h.SumHistPeriod) AND (t.FiscalYear = h.FiscalYear) 
+	INNER JOIN dbo.tblArCust c (NOLOCK) ON h.CustId = c.CustId
+WHERE ((h.SumHistPeriod = @SummaryHistoryPeriod)
+	AND (h.FiscalYear = @FiscalYear))
+	OR
+	((h.SumHistPeriod = @SummaryHistoryPeriod)
+	AND (h.FiscalYear = @FiscalYear))
+	OR
+	((h.SumHistPeriod = @SummaryHistoryPeriod)
+	AND (h.FiscalYear = @FiscalYear))
+	OR
+	((h.SumHistPeriod = @SummaryHistoryPeriod)
+	AND (h.FiscalYear = @FiscalYear)) ORDER BY GrpId1</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@SummaryHistoryPeriod">
+            <Value>=Parameters!SummaryHistoryPeriod.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FiscalYear">
+            <Value>=Parameters!FiscalYear.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SortBy">
+            <Value>=Parameters!SortBy.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>8.3in</Width>
+  <Body>
+    <ColumnSpacing>0.25in</ColumnSpacing>
+    <ReportItems>
+      <Table Name="tblCriteria">
+        <ZIndex>1</ZIndex>
+        <DataSetName>MainDataset</DataSetName>
+        <Width>7.25in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Visibility>
+                <Hidden>=IIF(code.utility.GetBoolRule("SM", "PrintReportCriteria") = True, False, True)</Hidden>
+              </Visibility>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblReportFilter">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblReportFilter")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="txtReportFilter">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Parameters!ReportFilter.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.525in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.525in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.1667in</Height>
+      </Table>
+      <Table Name="tblMain">
+        <DataSetName>MainDataset</DataSetName>
+        <KeepTogether>true</KeepTogether>
+        <Top>0.1667in</Top>
+        <TableGroups>
+          <TableGroup>
+            <Grouping Name="grpSortGroup">
+              <GroupExpressions>
+                <GroupExpression>=Fields!GrpId1.Value</GroupExpression>
+              </GroupExpressions>
+            </Grouping>
+            <Sorting>
+              <SortBy>
+                <SortExpression>=Fields!GrpId1.Value</SortExpression>
+                <Direction>Ascending</Direction>
+              </SortBy>
+            </Sorting>
+            <Header>
+              <TableRows>
+                <TableRow>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>12</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox6">
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
+                          <CanShrink>true</CanShrink>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <VerticalAlign>Middle</VerticalAlign>
+                          </Style>
+                          <ZIndex>24</ZIndex>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.1667in</Height>
+                </TableRow>
+              </TableRows>
+            </Header>
+          </TableGroup>
+        </TableGroups>
+        <Width>7.25in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="txtCustId">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>23</ZIndex>
+                      <Value>=Fields!CustId.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>9</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="txtCustName">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>22</ZIndex>
+                      <Value>=Fields!CustName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtClassId">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <Value>=Fields!ClassId.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="txtSalesRepId1">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <Value>=Fields!SalesRepId1.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalSales">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>=code.utility.GetAmountFormatString("")</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <Value>=Fields!TotalSales.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalSalesPct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <Value>=Fields!TotalSalesPct.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalGrossProfit">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>=code.utility.GetAmountFormatString("")</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <Value>=Fields!TotalGrossProfit.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalGrossPct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <Value>=Fields!TotalGrossPct.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalAveInvc">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>=code.utility.GetAmountFormatString("")</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <Value>=Fields!TotalAveInvc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalAvePct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <Value>=Fields!TotalAvePct.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalNumInvc">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>N0</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <Value>=Fields!TotalNumInvc.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtTotalNumInvcPct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <BackgroundColor>=IIF(Parameters!BandedRows.Value = True, (IIF(((RowNumber(NOTHING))MOD 2), code.utility.GetColorRule("1"), code.utility.GetColorRule("2"))), "White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <Value>=Fields!TotalNumInvcPct.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <FontSize>8pt</FontSize>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>12</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Bottom>2pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>44</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.05in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>12</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>43</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.05in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblCustomerId">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>42</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblCustomerId")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>9</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblName">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>41</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblName")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>40</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblClassCode">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>39</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblClassCode")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblSalesRepId">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>38</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblSalesRepId")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblSales">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>37</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblSales")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblGrossProfit">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>36</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblGrossProfit")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblAvgInvoice">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>35</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblAvgInvoice")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblNoOfInvoices">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>34</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblNoOfInvoices")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>4</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>33</ZIndex>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblAmount1">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>32</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblAmount")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblPctTot1">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>31</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblPctTot")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblAmount2">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>30</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblAmount")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblPctTot2">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>29</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblPctTot")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblAmount3">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>28</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblAmount")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblPctTot3">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>27</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblPctTot")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblAmount4">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>26</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblAmount")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="lblPctTot4">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>25</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblPctTot")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.15in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>12</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.05in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>12</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Top>2pt</Top>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.03125in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>4</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="lblGrandTotal">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>21</ZIndex>
+                      <Value>=code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblGrandTotal")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalSales">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>=code.utility.GetAmountFormatString("")</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>20</ZIndex>
+                      <Value>=IIF(Not IsNothing(Fields!TotalSales.Value), SUM(Fields!TotalSales.Value),0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalSalesPct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>19</ZIndex>
+                      <Value>=IIF(Not IsNothing(Fields!TotalSales.Value), IIF(Fields!GrandTotalSales.Value &lt;&gt; 0, (IIF(Not IsNothing(Fields!TotalSales.Value), SUM(Fields!TotalSales.Value),0) / IIF(Fields!GrandTotalSales.Value = 0, 1, Fields!GrandTotalSales.Value)) * 100, 0), 0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalGrossProfit">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>=code.utility.GetAmountFormatString("")</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>18</ZIndex>
+                      <Value>=IIF(Not IsNothing(Fields!TotalGrossProfit.Value), SUM(Fields!TotalGrossProfit.Value), 0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalGrossPct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>17</ZIndex>
+                      <Value>=IIF(Not IsNothing(Fields!TotalGrossProfit.Value),IIF(Fields!GrandTotalGrossProfit.Value &lt;&gt; 0, (IIF(Not IsNothing(Fields!TotalGrossProfit.Value), SUM(Fields!TotalGrossProfit.Value), 0) / IIF(Fields!GrandTotalGrossProfit.Value = 0, 1, Fields!GrandTotalGrossProfit.Value)) * 100, 0), 0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalAveInvc">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>=code.utility.GetAmountFormatString("")</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>16</ZIndex>
+                      <Value>=IIF(SUM(Fields!TotalNumInvc.Value) = 0, 0, SUM(Fields!TotalSales.Value) / SUM(Fields!TotalNumInvc.Value))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalAvePct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <Value>=IIF(Fields!GrandTotalNumInvc.Value = 0, 0, (IIF(SUM(Fields!TotalNumInvc.Value) = 0, 0, SUM(Fields!TotalSales.Value) / IIF(SUM(Fields!TotalNumInvc.Value) = 0, 1,SUM(Fields!TotalNumInvc.Value))) / (IIF(Fields!GrandTotalSales.Value = 0, 1, Fields!GrandTotalSales.Value) / IIF(Fields!GrandTotalNumInvc.Value = 0, 1, Fields!GrandTotalNumInvc.Value))) * 100)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalNumInvc">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N0</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <Value>=IIF(Not IsNothing(Fields!TotalNumInvc.Value), SUM(Fields!TotalNumInvc.Value), 0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="txtGrandTotalNumInvcPct">
+                      <CanShrink>true</CanShrink>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Format>N2</Format>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <Value>=IIF(Not IsNothing(Fields!TotalNumInvc.Value), IIF(Fields!GrandTotalNumInvc.Value &lt;&gt; 0, (IIF(Not IsNothing(Fields!TotalNumInvc.Value), SUM(Fields!TotalNumInvc.Value), 0) / IIF(Fields!GrandTotalNumInvc.Value = 0, 1, Fields!GrandTotalNumInvc.Value)) * 100, 0), 0)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.1667in</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+      </Table>
+    </ReportItems>
+    <Height>1.51485in</Height>
+  </Body>
+  <Classes>
+    <Class>
+      <ClassName>TRAVERSE.Client.Report.Utility</ClassName>
+      <InstanceName>utility</InstanceName>
+    </Class>
+  </Classes>
+  <Language>en-US</Language>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="txtExecutionDate">
+        <Top>0.0333in</Top>
+        <Width>2.25in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Left</TextAlign>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Height>0.9667in</Height>
+        <Value>=code.utility.GetFormattedShortDate(Globals!ExecutionTime) + " " + Globals!ExecutionTime.ToShortTimeString()</Value>
+      </Textbox>
+      <Textbox Name="txtUserId">
+        <Top>0.0333in</Top>
+        <Width>2in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Left>5.25in</Left>
+        <Height>0.1667in</Height>
+        <Value>=User!UserID</Value>
+      </Textbox>
+      <Textbox Name="lblEndOfReport">
+        <CanShrink>true</CanShrink>
+        <Top>0.0333in</Top>
+        <Width>2in</Width>
+        <Style>
+          <FontSize>8pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>2.625in</Left>
+        <Value>=IIF(Globals!PageNumber = Globals!TotalPages, code.utility.GetLocalizedString(Parameters!ReportName.Value, "lblEndOfReport"), "")</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>1.1in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

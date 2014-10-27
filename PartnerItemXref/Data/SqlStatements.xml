@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database includeDrop="false">EDI</database>
+<procedures>
+        
+        <procedure owner="dbo" name="trav_tblEdPartnerItemXref_GetList" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Wednesday, October 01, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Gets all records from the tblEdPartnerItemXref table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@PartnerId" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@TravItemId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@TravUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+                <parameter name="@ALL" type="bit" direction="Input" size="1" precision="0" scale="0" param="" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                
+                SELECT
+                    [PartnerId],
+                    [TravItemId],
+                    [TravUom],
+                    [EdiUom],
+                    [EAN],
+                    [GTIN],
+                    [UPC],
+                    [SKU],
+                    [BuyerCode],
+                    [VendorCode],
+                    [InternalCode],
+                    [InternalCode1],
+                    [InternalCode2]
+                FROM
+                    dbo.[tblEdPartnerItemXref]
+                WHERE @ALL=1 OR (
+                [PartnerId] = @PartnerId AND 
+                [TravItemId] = @TravItemId AND 
+                [TravUom] = @TravUom
+                )
+                    
+            ]]></body>
+        </procedure>
+        
+        <procedure owner="dbo" name="trav_tblEdPartnerItemXref_Insert" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Wednesday, October 01, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Inserts a record into the tblEdPartnerItemXref table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@PartnerId" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@TravItemId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@TravUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+				<parameter name="@EdiUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+				<parameter name="@EAN" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@GTIN" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@UPC" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@SKU" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@BuyerCode" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@VendorCode" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@InternalCode" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@InternalCode1" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@InternalCode2" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                    
+                INSERT INTO dbo.[tblEdPartnerItemXref]
+                    (
+                    [PartnerId]
+                    ,[TravItemId]
+                    ,[TravUom]
+                    ,[EdiUom]
+                    ,[EAN]
+                    ,[GTIN]
+                    ,[UPC]
+                    ,[SKU]
+                    ,[BuyerCode]
+                    ,[VendorCode]
+                    ,[InternalCode]
+                    ,[InternalCode1]
+                    ,[InternalCode2]
+                    )
+                VALUES
+                    (
+                    @PartnerId
+                    ,@TravItemId
+                    ,@TravUom
+                    ,@EdiUom
+                    ,@EAN
+                    ,@GTIN
+                    ,@UPC
+                    ,@SKU
+                    ,@BuyerCode
+                    ,@VendorCode
+                    ,@InternalCode
+                    ,@InternalCode1
+                    ,@InternalCode2
+                    )
+                
+                                    
+                            
+            ]]></body>
+        </procedure>
+
+        <procedure owner="dbo" name="trav_tblEdPartnerItemXref_Update" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Wednesday, October 01, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Updates a record in the tblEdPartnerItemXref table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@PartnerId" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@OriginalPartnerId" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@TravItemId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@OriginalTravItemId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@TravUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+				<parameter name="@OriginalTravUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+				<parameter name="@EdiUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+				<parameter name="@EAN" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@GTIN" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@UPC" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@SKU" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@BuyerCode" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@VendorCode" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@InternalCode" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@InternalCode1" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@InternalCode2" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                
+                
+                -- Modify the updatable columns
+                UPDATE
+                    dbo.[tblEdPartnerItemXref]
+                SET
+                    [EdiUom] = @EdiUom
+                    ,[EAN] = @EAN
+                    ,[GTIN] = @GTIN
+                    ,[UPC] = @UPC
+                    ,[SKU] = @SKU
+                    ,[BuyerCode] = @BuyerCode
+                    ,[VendorCode] = @VendorCode
+                    ,[InternalCode] = @InternalCode
+                    ,[InternalCode1] = @InternalCode1
+                    ,[InternalCode2] = @InternalCode2
+                WHERE
+[PartnerId] = @OriginalPartnerId 
+AND [TravItemId] = @OriginalTravItemId 
+AND [TravUom] = @OriginalTravUom 
+                
+            ]]></body>
+        </procedure>
+
+        <procedure owner="dbo" name="trav_tblEdPartnerItemXref_Delete" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Wednesday, October 01, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Deletes a record in the tblEdPartnerItemXref table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@PartnerId" type="varchar" direction="Input" size="50" precision="0" scale="0" param="(50)" nulldefault=""/>
+				<parameter name="@TravItemId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@TravUom" type="varchar" direction="Input" size="5" precision="0" scale="0" param="(5)" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                DELETE FROM dbo.[tblEdPartnerItemXref] WITH (ROWLOCK) 
+                WHERE
+                    [PartnerId] = @PartnerId
+                    AND [TravItemId] = @TravItemId
+                    AND [TravUom] = @TravUom
+                    
+            ]]></body>
+        </procedure>
+
+        
+        <procedure owner="dbo" name="trav_tblEdPartnerItemXref_GetPaged" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Wednesday, October 01, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Gets records from the tblEdPartnerItemXref table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+                <parameter name="@WhereClause" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)" />
+                <parameter name="@OrderBy" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)"/>
+                <parameter name="@PageIndex" type="int" direction="Input" size="0" precision="10" scale="0" />
+                <parameter name="@PageSize" type="int" direction="Input" size="0" precision="10" scale="0" /> 
+            </parameters>
+            <body><![CDATA[
+                
+                BEGIN
+                DECLARE @PageLowerBound int
+                DECLARE @PageUpperBound int
+                
+                -- Set the page bounds
+                SET @PageLowerBound = @PageSize * @PageIndex
+                SET @PageUpperBound = @PageLowerBound + @PageSize
+
+                -- Create a temp table to store the select results
+                Create Table #PageIndex
+                (
+                    [IndexId] int IDENTITY (1, 1) NOT NULL,
+                    [PartnerId] varchar(50) COLLATE database_default , [TravItemId] varchar(20) COLLATE database_default , [TravUom] varchar(5) COLLATE database_default  
+                )
+                
+                -- Insert into the temp table
+                declare @SQL as nvarchar(4000)
+                SET @SQL = 'INSERT INTO #PageIndex (PartnerId, TravItemId, TravUom)'
+                SET @SQL = @SQL + ' SELECT'
+                IF @PageSize > 0
+                BEGIN
+                    SET @SQL = @SQL + ' TOP ' + convert(nvarchar, @PageUpperBound)
+                END
+                SET @SQL = @SQL + ' [PartnerId], [TravItemId], [TravUom]'
+                SET @SQL = @SQL + ' FROM dbo.[tblEdPartnerItemXref]'
+                IF LEN(@WhereClause) > 0
+                BEGIN
+                    SET @SQL = @SQL + ' WHERE ' + @WhereClause
+                END
+                IF LEN(@OrderBy) > 0
+                BEGIN
+                    SET @SQL = @SQL + ' ORDER BY ' + @OrderBy
+                END
+                
+                -- Populate the temp table
+                exec sp_executesql @SQL
+
+                -- Return paged results
+                SELECT O.[PartnerId], O.[TravItemId], O.[TravUom], O.[EdiUom], O.[EAN], O.[GTIN], O.[UPC], O.[SKU], O.[BuyerCode], O.[VendorCode], O.[InternalCode], O.[InternalCode1], O.[InternalCode2]
+                FROM
+                    dbo.[tblEdPartnerItemXref] O,
+                    #PageIndex PageIndex
+                WHERE
+                    PageIndex.IndexID > @PageLowerBound
+					AND O.[PartnerId] = PageIndex.[PartnerId]
+					AND O.[TravItemId] = PageIndex.[TravItemId]
+					AND O.[TravUom] = PageIndex.[TravUom]
+                ORDER BY
+                    PageIndex.IndexID
+                
+                -- get row count
+                SET @SQL = 'SELECT COUNT(*) as TotalRowCount'
+                SET @SQL = @SQL + ' FROM dbo.[tblEdPartnerItemXref]'
+                IF LEN(@WhereClause) > 0
+                BEGIN
+                    SET @SQL = @SQL + ' WHERE ' + @WhereClause
+                END
+                exec sp_executesql @SQL
+            
+                END
+            ]]></body>
+        </procedure>
+        
+</procedures>
+</root>
+
