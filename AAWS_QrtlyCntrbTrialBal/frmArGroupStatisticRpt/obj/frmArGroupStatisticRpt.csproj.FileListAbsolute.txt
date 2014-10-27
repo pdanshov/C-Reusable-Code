@@ -1,0 +1,28 @@
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\bin\Debug\CSI.AACTB.frmArGroupStatisticRpt.dll
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\bin\Debug\CSI.AACTB.frmArGroupStatisticRpt.pdb
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.frmArGroupStatisticRptControl.resources
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\frmArGroupStatisticRpt.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.dll
+C:\Users\Administrator\Desktop\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\bin\Debug\CSI.AACTB.frmArGroupStatisticRpt.dll
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\bin\Debug\CSI.AACTB.frmArGroupStatisticRpt.pdb
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.frmArGroupStatisticRptControl.resources
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\frmArGroupStatisticRpt.csproj.GenerateResource.Cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.dll
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\2008\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.pdb
+S:\Version Control\AAWS CTB\TRAVERSE - AAWS\CSI.AACTB.frmArGroupStatisticRpt.dll
+S:\Version Control\AAWS CTB\TRAVERSE - AAWS\CSI.AACTB.frmArGroupStatisticRpt.pdb
+S:\Version Control\AAWS CTB\Traverse11\SourceCode\OK\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\ResolveAssemblyReference.cache
+S:\Version Control\AAWS CTB\Traverse11\SourceCode\OK\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.frmArGroupStatisticRptControl.resources
+S:\Version Control\AAWS CTB\Traverse11\SourceCode\OK\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\frmArGroupStatisticRpt.csproj.GenerateResource.Cache
+S:\Version Control\AAWS CTB\Traverse11\SourceCode\OK\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.dll
+S:\Version Control\AAWS CTB\Traverse11\SourceCode\OK\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AACTB.frmArGroupStatisticRpt.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AACTB.frmArGroupStatisticRpt.pdb
+C:\Users\Administrator\Desktop\AACTB\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AACTB\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.frmArGroupStatisticRptControl.resources
+C:\Users\Administrator\Desktop\AACTB\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\frmArGroupStatisticRpt.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\AACTB\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.dll
+C:\Users\Administrator\Desktop\AACTB\AAWS_Statistic_Rpt\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.pdb

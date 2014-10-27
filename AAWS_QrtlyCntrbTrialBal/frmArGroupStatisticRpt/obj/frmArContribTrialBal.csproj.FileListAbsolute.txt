@@ -1,0 +1,7 @@
+C:\Users\Administrator\Desktop\AACTB\AAWS_QrtlyCntrbTrialBal\frmArGroupStatisticRpt\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AACTB\AAWS_QrtlyCntrbTrialBal\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArGroupStatisticRpt.frmArContribTrialBalControl.resources
+C:\Users\Administrator\Desktop\AACTB\AAWS_QrtlyCntrbTrialBal\frmArGroupStatisticRpt\obj\Debug\frmArContribTrialBal.csproj.GenerateResource.Cache
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AACTB.frmArContribTrialBal.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AACTB.frmArContribTrialBal.pdb
+C:\Users\Administrator\Desktop\AACTB\AAWS_QrtlyCntrbTrialBal\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArContribTrialBal.dll
+C:\Users\Administrator\Desktop\AACTB\AAWS_QrtlyCntrbTrialBal\frmArGroupStatisticRpt\obj\Debug\CSI.AACTB.frmArContribTrialBal.pdb
