@@ -1,0 +1,16 @@
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.Properties.Resources.resources
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.WebContribImpControl.resources
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.dll.licenses
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AAWSctb.Client.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AAWSctb.Client.WebContribImp.pdb
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.Properties.Resources.resources
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.WebContribImpControl.resources
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.dll.licenses
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.dll
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Client\obj\Debug\CSI.AAWSctb.Client.WebContribImp.pdb

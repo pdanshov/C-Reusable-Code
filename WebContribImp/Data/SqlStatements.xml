@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database includeDrop="false">ctb</database>
+<procedures>
+        
+        <procedure owner="dbo" name="trav_tblArWebContribImp_CSI_GetList" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Friday, October 24, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Gets all records from the tblArWebContribImp_CSI table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@Id" type="bigint" direction="Input" size="0" precision="19" scale="0" param="" nulldefault=""/>
+                <parameter name="@ALL" type="bit" direction="Input" size="1" precision="0" scale="0" param="" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                
+                SELECT
+                    [id],
+                    [TransId],
+                    [PmtDate],
+                    [PmtAmt],
+                    [CheckNum],
+                    [GroupId],
+                    [PmtMethodId],
+                    [CcHolder],
+                    [CcNum],
+                    [CcExpire],
+                    [CcAuth],
+                    [CurrencyID],
+                    [ExchRate],
+                    [SourceCode],
+                    [Area],
+                    [CustName],
+                    [Addr1],
+                    [Addr2],
+                    [City],
+                    [Region],
+                    [Country],
+                    [PostalCode],
+                    [spAcknowlgmnt],
+                    [Lang],
+                    [DntSendAcknYN],
+                    [RptExchRate],
+                    [EmailAddr],
+                    [SendEmailYN],
+                    [ValidYN],
+                    [ImportedYN],
+                    [TravRcptHeaderID],
+                    [WebId],
+                    [SkipYN],
+                    [errdescr],
+                    [GroupCountry],
+                    [GroupState],
+                    [GroupCity],
+                    [GroupName],
+                    [BillToAddr1],
+                    [BillToAddr2],
+                    [BillToCity],
+                    [BillToRegion],
+                    [BillToCountry],
+                    [BillToPostalCode],
+                    [CF]
+                FROM
+                    dbo.[tblArWebContribImp_CSI]
+                WHERE @ALL=1 OR (
+                [id] = @Id
+                )
+                    
+            ]]></body>
+        </procedure>
+        
+        <procedure owner="dbo" name="trav_tblArWebContribImp_CSI_Insert" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Friday, October 24, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Inserts a record into the tblArWebContribImp_CSI table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@Id" type="bigint" direction="Output" size="0" precision="19" scale="0" param="" nulldefault=""/>
+				<parameter name="@TransId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@PmtDate" type="datetime" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@PmtAmt" type="decimal" direction="Input" size="0" precision="20" scale="10" param="(20, 10)" nulldefault=""/>
+				<parameter name="@CheckNum" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@GroupId" type="varchar" direction="Input" size="9" precision="0" scale="0" param="(9)" nulldefault=""/>
+				<parameter name="@PmtMethodId" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@CcHolder" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@CcNum" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@CcExpire" type="datetime" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@CcAuth" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@CurrencyId" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@ExchRate" type="decimal" direction="Input" size="0" precision="20" scale="10" param="(20, 10)" nulldefault=""/>
+				<parameter name="@SourceCode" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@Area" type="varchar" direction="Input" size="3" precision="0" scale="0" param="(3)" nulldefault=""/>
+				<parameter name="@CustName" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Addr1" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Addr2" type="varchar" direction="Input" size="60" precision="0" scale="0" param="(60)" nulldefault=""/>
+				<parameter name="@City" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Region" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@Country" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@PostalCode" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@SpAcknowlgmnt" type="varchar" direction="Input" size="75" precision="0" scale="0" param="(75)" nulldefault=""/>
+				<parameter name="@Lang" type="varchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@DntSendAcknYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@RptExchRate" type="decimal" direction="Input" size="0" precision="20" scale="10" param="(20, 10)" nulldefault=""/>
+				<parameter name="@EmailAddr" type="varchar" direction="Input" size="255" precision="0" scale="0" param="(255)" nulldefault=""/>
+				<parameter name="@SendEmailYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@ValidYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@ImportedYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@TravRcptHeaderId" type="int" direction="Input" size="0" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@WebId" type="bigint" direction="Input" size="0" precision="19" scale="0" param="" nulldefault=""/>
+				<parameter name="@SkipYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@Errdescr" type="varchar" direction="Input" size="550" precision="0" scale="0" param="(550)" nulldefault=""/>
+				<parameter name="@GroupCountry" type="varchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@GroupState" type="varchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@GroupCity" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@GroupName" type="varchar" direction="Input" size="100" precision="0" scale="0" param="(100)" nulldefault=""/>
+				<parameter name="@BillToAddr1" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@BillToAddr2" type="varchar" direction="Input" size="60" precision="0" scale="0" param="(60)" nulldefault=""/>
+				<parameter name="@BillToCity" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@BillToRegion" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@BillToCountry" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@BillToPostalCode" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@CF" type="xml" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                    
+                INSERT INTO dbo.[tblArWebContribImp_CSI]
+                    (
+                    [TransId]
+                    ,[PmtDate]
+                    ,[PmtAmt]
+                    ,[CheckNum]
+                    ,[GroupId]
+                    ,[PmtMethodId]
+                    ,[CcHolder]
+                    ,[CcNum]
+                    ,[CcExpire]
+                    ,[CcAuth]
+                    ,[CurrencyID]
+                    ,[ExchRate]
+                    ,[SourceCode]
+                    ,[Area]
+                    ,[CustName]
+                    ,[Addr1]
+                    ,[Addr2]
+                    ,[City]
+                    ,[Region]
+                    ,[Country]
+                    ,[PostalCode]
+                    ,[spAcknowlgmnt]
+                    ,[Lang]
+                    ,[DntSendAcknYN]
+                    ,[RptExchRate]
+                    ,[EmailAddr]
+                    ,[SendEmailYN]
+                    ,[ValidYN]
+                    ,[ImportedYN]
+                    ,[TravRcptHeaderID]
+                    ,[WebId]
+                    ,[SkipYN]
+                    ,[errdescr]
+                    ,[GroupCountry]
+                    ,[GroupState]
+                    ,[GroupCity]
+                    ,[GroupName]
+                    ,[BillToAddr1]
+                    ,[BillToAddr2]
+                    ,[BillToCity]
+                    ,[BillToRegion]
+                    ,[BillToCountry]
+                    ,[BillToPostalCode]
+                    ,[CF]
+                    )
+                VALUES
+                    (
+                    @TransId
+                    ,@PmtDate
+                    ,@PmtAmt
+                    ,@CheckNum
+                    ,@GroupId
+                    ,@PmtMethodId
+                    ,@CcHolder
+                    ,@CcNum
+                    ,@CcExpire
+                    ,@CcAuth
+                    ,@CurrencyId
+                    ,@ExchRate
+                    ,@SourceCode
+                    ,@Area
+                    ,@CustName
+                    ,@Addr1
+                    ,@Addr2
+                    ,@City
+                    ,@Region
+                    ,@Country
+                    ,@PostalCode
+                    ,@SpAcknowlgmnt
+                    ,@Lang
+                    ,@DntSendAcknYN
+                    ,@RptExchRate
+                    ,@EmailAddr
+                    ,@SendEmailYN
+                    ,@ValidYN
+                    ,@ImportedYN
+                    ,@TravRcptHeaderId
+                    ,@WebId
+                    ,@SkipYN
+                    ,@Errdescr
+                    ,@GroupCountry
+                    ,@GroupState
+                    ,@GroupCity
+                    ,@GroupName
+                    ,@BillToAddr1
+                    ,@BillToAddr2
+                    ,@BillToCity
+                    ,@BillToRegion
+                    ,@BillToCountry
+                    ,@BillToPostalCode
+                    ,@CF
+                    )
+                
+                -- Get the identity value
+                SET @Id = SCOPE_IDENTITY()
+                                    
+                            
+            ]]></body>
+        </procedure>
+
+        <procedure owner="dbo" name="trav_tblArWebContribImp_CSI_Update" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Friday, October 24, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Updates a record in the tblArWebContribImp_CSI table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@Id" type="bigint" direction="Input" size="0" precision="19" scale="0" param="" nulldefault=""/>
+				<parameter name="@TransId" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@PmtDate" type="datetime" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@PmtAmt" type="decimal" direction="Input" size="0" precision="20" scale="10" param="(20, 10)" nulldefault=""/>
+				<parameter name="@CheckNum" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@GroupId" type="varchar" direction="Input" size="9" precision="0" scale="0" param="(9)" nulldefault=""/>
+				<parameter name="@PmtMethodId" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@CcHolder" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@CcNum" type="varchar" direction="Input" size="20" precision="0" scale="0" param="(20)" nulldefault=""/>
+				<parameter name="@CcExpire" type="datetime" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@CcAuth" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@CurrencyId" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@ExchRate" type="decimal" direction="Input" size="0" precision="20" scale="10" param="(20, 10)" nulldefault=""/>
+				<parameter name="@SourceCode" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@Area" type="varchar" direction="Input" size="3" precision="0" scale="0" param="(3)" nulldefault=""/>
+				<parameter name="@CustName" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Addr1" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Addr2" type="varchar" direction="Input" size="60" precision="0" scale="0" param="(60)" nulldefault=""/>
+				<parameter name="@City" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@Region" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@Country" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@PostalCode" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@SpAcknowlgmnt" type="varchar" direction="Input" size="75" precision="0" scale="0" param="(75)" nulldefault=""/>
+				<parameter name="@Lang" type="varchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@DntSendAcknYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@RptExchRate" type="decimal" direction="Input" size="0" precision="20" scale="10" param="(20, 10)" nulldefault=""/>
+				<parameter name="@EmailAddr" type="varchar" direction="Input" size="255" precision="0" scale="0" param="(255)" nulldefault=""/>
+				<parameter name="@SendEmailYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@ValidYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@ImportedYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@TravRcptHeaderId" type="int" direction="Input" size="0" precision="10" scale="0" param="" nulldefault=""/>
+				<parameter name="@WebId" type="bigint" direction="Input" size="0" precision="19" scale="0" param="" nulldefault=""/>
+				<parameter name="@SkipYN" type="bit" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+				<parameter name="@Errdescr" type="varchar" direction="Input" size="550" precision="0" scale="0" param="(550)" nulldefault=""/>
+				<parameter name="@GroupCountry" type="varchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@GroupState" type="varchar" direction="Input" size="2" precision="0" scale="0" param="(2)" nulldefault=""/>
+				<parameter name="@GroupCity" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@GroupName" type="varchar" direction="Input" size="100" precision="0" scale="0" param="(100)" nulldefault=""/>
+				<parameter name="@BillToAddr1" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@BillToAddr2" type="varchar" direction="Input" size="60" precision="0" scale="0" param="(60)" nulldefault=""/>
+				<parameter name="@BillToCity" type="varchar" direction="Input" size="30" precision="0" scale="0" param="(30)" nulldefault=""/>
+				<parameter name="@BillToRegion" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@BillToCountry" type="varchar" direction="Input" size="6" precision="0" scale="0" param="(6)" nulldefault=""/>
+				<parameter name="@BillToPostalCode" type="varchar" direction="Input" size="10" precision="0" scale="0" param="(10)" nulldefault=""/>
+				<parameter name="@CF" type="xml" direction="Input" size="0" precision="0" scale="0" param="" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                
+                
+                -- Modify the updatable columns
+                UPDATE
+                    dbo.[tblArWebContribImp_CSI]
+                SET
+                    [TransId] = @TransId
+                    ,[PmtDate] = @PmtDate
+                    ,[PmtAmt] = @PmtAmt
+                    ,[CheckNum] = @CheckNum
+                    ,[GroupId] = @GroupId
+                    ,[PmtMethodId] = @PmtMethodId
+                    ,[CcHolder] = @CcHolder
+                    ,[CcNum] = @CcNum
+                    ,[CcExpire] = @CcExpire
+                    ,[CcAuth] = @CcAuth
+                    ,[CurrencyID] = @CurrencyId
+                    ,[ExchRate] = @ExchRate
+                    ,[SourceCode] = @SourceCode
+                    ,[Area] = @Area
+                    ,[CustName] = @CustName
+                    ,[Addr1] = @Addr1
+                    ,[Addr2] = @Addr2
+                    ,[City] = @City
+                    ,[Region] = @Region
+                    ,[Country] = @Country
+                    ,[PostalCode] = @PostalCode
+                    ,[spAcknowlgmnt] = @SpAcknowlgmnt
+                    ,[Lang] = @Lang
+                    ,[DntSendAcknYN] = @DntSendAcknYN
+                    ,[RptExchRate] = @RptExchRate
+                    ,[EmailAddr] = @EmailAddr
+                    ,[SendEmailYN] = @SendEmailYN
+                    ,[ValidYN] = @ValidYN
+                    ,[ImportedYN] = @ImportedYN
+                    ,[TravRcptHeaderID] = @TravRcptHeaderId
+                    ,[WebId] = @WebId
+                    ,[SkipYN] = @SkipYN
+                    ,[errdescr] = @Errdescr
+                    ,[GroupCountry] = @GroupCountry
+                    ,[GroupState] = @GroupState
+                    ,[GroupCity] = @GroupCity
+                    ,[GroupName] = @GroupName
+                    ,[BillToAddr1] = @BillToAddr1
+                    ,[BillToAddr2] = @BillToAddr2
+                    ,[BillToCity] = @BillToCity
+                    ,[BillToRegion] = @BillToRegion
+                    ,[BillToCountry] = @BillToCountry
+                    ,[BillToPostalCode] = @BillToPostalCode
+                    ,[CF] = @CF
+                WHERE
+[id] = @Id 
+                
+            ]]></body>
+        </procedure>
+
+        <procedure owner="dbo" name="trav_tblArWebContribImp_CSI_Delete" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Friday, October 24, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Deletes a record in the tblArWebContribImp_CSI table
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+				<parameter name="@Id" type="bigint" direction="Input" size="0" precision="19" scale="0" param="" nulldefault=""/>
+            </parameters>
+            <body><![CDATA[
+                DELETE FROM dbo.[tblArWebContribImp_CSI] WITH (ROWLOCK) 
+                WHERE
+                    [id] = @Id
+                    
+            ]]></body>
+        </procedure>
+
+        
+        <procedure owner="dbo" name="trav_tblArWebContribImp_CSI_GetPaged" grant="">
+            <comment><![CDATA[/*
+----------------------------------------------------------------------------------------------------
+-- Date Created: Friday, October 24, 2014
+
+-- Author: Open Systems, Inc. (http://www.osas.com)
+-- Purpose: Gets records from the tblArWebContribImp_CSI table passing page index and page count parameters
+----------------------------------------------------------------------------------------------------
+*/
+]]></comment>
+            <parameters>
+                <parameter name="@WhereClause" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)" />
+                <parameter name="@OrderBy" type="varchar" direction="Input" size="2000" precision="0" scale="0" param="(2000)"/>
+                <parameter name="@PageIndex" type="int" direction="Input" size="0" precision="10" scale="0" />
+                <parameter name="@PageSize" type="int" direction="Input" size="0" precision="10" scale="0" /> 
+            </parameters>
+            <body><![CDATA[
+                
+                BEGIN
+                DECLARE @PageLowerBound int
+                DECLARE @PageUpperBound int
+                
+                -- Set the page bounds
+                SET @PageLowerBound = @PageSize * @PageIndex
+                SET @PageUpperBound = @PageLowerBound + @PageSize
+
+                -- Create a temp table to store the select results
+                Create Table #PageIndex
+                (
+                    [IndexId] int IDENTITY (1, 1) NOT NULL,
+                    [id] bigint 
+                )
+                
+                -- Insert into the temp table
+                declare @SQL as nvarchar(4000)
+                SET @SQL = 'INSERT INTO #PageIndex (Id)'
+                SET @SQL = @SQL + ' SELECT'
+                IF @PageSize > 0
+                BEGIN
+                    SET @SQL = @SQL + ' TOP ' + convert(nvarchar, @PageUpperBound)
+                END
+                SET @SQL = @SQL + ' [id]'
+                SET @SQL = @SQL + ' FROM dbo.[tblArWebContribImp_CSI]'
+                IF LEN(@WhereClause) > 0
+                BEGIN
+                    SET @SQL = @SQL + ' WHERE ' + @WhereClause
+                END
+                IF LEN(@OrderBy) > 0
+                BEGIN
+                    SET @SQL = @SQL + ' ORDER BY ' + @OrderBy
+                END
+                
+                -- Populate the temp table
+                exec sp_executesql @SQL
+
+                -- Return paged results
+                SELECT O.[id], O.[TransId], O.[PmtDate], O.[PmtAmt], O.[CheckNum], O.[GroupId], O.[PmtMethodId], O.[CcHolder], O.[CcNum], O.[CcExpire], O.[CcAuth], O.[CurrencyID], O.[ExchRate], O.[SourceCode], O.[Area], O.[CustName], O.[Addr1], O.[Addr2], O.[City], O.[Region], O.[Country], O.[PostalCode], O.[spAcknowlgmnt], O.[Lang], O.[DntSendAcknYN], O.[RptExchRate], O.[EmailAddr], O.[SendEmailYN], O.[ValidYN], O.[ImportedYN], O.[TravRcptHeaderID], O.[WebId], O.[SkipYN], O.[errdescr], O.[GroupCountry], O.[GroupState], O.[GroupCity], O.[GroupName], O.[BillToAddr1], O.[BillToAddr2], O.[BillToCity], O.[BillToRegion], O.[BillToCountry], O.[BillToPostalCode], O.[CF]
+                FROM
+                    dbo.[tblArWebContribImp_CSI] O,
+                    #PageIndex PageIndex
+                WHERE
+                    PageIndex.IndexID > @PageLowerBound
+					AND O.[id] = PageIndex.[id]
+                ORDER BY
+                    PageIndex.IndexID
+                
+                -- get row count
+                SET @SQL = 'SELECT COUNT(*) as TotalRowCount'
+                SET @SQL = @SQL + ' FROM dbo.[tblArWebContribImp_CSI]'
+                IF LEN(@WhereClause) > 0
+                BEGIN
+                    SET @SQL = @SQL + ' WHERE ' + @WhereClause
+                END
+                exec sp_executesql @SQL
+            
+                END
+            ]]></body>
+        </procedure>
+        
+</procedures>
+</root>
+

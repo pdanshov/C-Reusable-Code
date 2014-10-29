@@ -1,0 +1,8 @@
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Business\obj\Debug\CSI.AAWSctb.Business.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Business\obj\Debug\CSI.AAWSctb.Business.WebContribImp.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AAWSctb.Business.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\CSI.AAWSctb.Business.WebContribImp.pdb
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Business\obj\Debug\CSI.AAWSctb.Business.WebContribImp.dll
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Business\obj\Debug\CSI.AAWSctb.Business.WebContribImp.pdb

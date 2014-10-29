@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB3FD946-D996-4757-BCA7-2036FDFEC0A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSI.AAWSctb.Client.WebContribImp</RootNamespace>
+    <AssemblyName>CSI.AAWSctb.Client.WebContribImp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\Program Files\Open Systems, Inc\TRAVERSE - AAWS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v8.1.Core, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.Charts.v8.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.Data.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.Utils.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraBars.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraEditors.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraGrid.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraLayout.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraNavBar.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraPrinting.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraReports.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichTextEdit.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\TRAVERSE - AAWS\DevExpress.XtraRichTextEdit.v8.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TRAVERSE.Business, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Client, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Controls, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Core, Version=1.1.1.9311, Culture=neutral, PublicKeyToken=65ed39acbe64cb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TRAVERSE.Data, Version=1.1.1.9311, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WebContribImpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WebContribImpPlugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{B9F37012-AA07-4C2D-88FC-0AA08680BFF3}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\TRAVERSE.Business.WebContribImp.WebContribImp.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebContribImpControl.resx">
+      <DependentUpon>WebContribImpControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

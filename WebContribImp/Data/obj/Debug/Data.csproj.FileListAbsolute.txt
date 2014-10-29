@@ -1,0 +1,10 @@
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Data\obj\Debug\TRAVERSE.Data.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\ClientSource\AAWS CTB\WebContribImp\Data\obj\Debug\TRAVERSE.Data.WebContribImp.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\TRAVERSE.Data.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\TRAVERSE.Data.WebContribImp.pdb
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\DataProvider\TRAVERSE.Data.WebContribImp.dll
+C:\Program Files\Open Systems, Inc\TRAVERSE - AAWS\DataProvider\TRAVERSE.Data.WebContribImp.pdb
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Data\obj\Debug\TRAVERSE.Data.WebContribImp.dll
+C:\Users\Administrator\Desktop\AACTB\WebContribImp\Data\obj\Debug\TRAVERSE.Data.WebContribImp.pdb
